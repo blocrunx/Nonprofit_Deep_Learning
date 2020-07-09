@@ -25,6 +25,12 @@ It was decided that the initial implimentation of the model would use the reLu a
 
 After 50 epochs the performance of the model was sub-par with a loss of 0.5733, an accuracy of 0.7186 , and was showing signs of overfitting. The model was initially tested with a single target and single output using the binary cross entropy loss function. To address performance issues the target column was encoded and split into success and failure columns. The next model would use the same hidden layer and neuron structure, using the newly encoded success column as a target. This modification helped the loss, accuracy, and overfitting so the epochs were increased to 100 which produced a loss of 0.5669, an accuracy of 0.7241. The model was able to be further improved by making both success and failure columns the targets, changing the loss function to categorical cross entropy and increasing the number of neurons in each layer. Although this imporved the loss to 0.5648, and the accuracy to 0.7285, more work was need to improve the model.
 
-The next step was to try adding more nerons and layers to the model which ended up decreasing performance. It was time to take another look at the preprocessing. More data was bucketed, some previously removed data was re-added which gave another slight increase in accuracy.
+The next step was to try adding more nerons and layers to the model which ended up decreasing performance. It was time to take another look at the preprocessing. More data was bucketed, some previously removed data was re-added which gave another increase in accuracy. The final model (found in the notebook neural_net_experiments.ipynb) has a loss of 0.5397, an accuracy of 0.7404 and no signs of overfitting. This model uses categorical cross entropy and 4 hidden layers:
+- 60 neurons in the first layer.
+- 20 neurons in the second layer. 
+- 10 neurons in the third layer. 
+- 10 neurons in the fourth layer.
+- 2 softmax neurons in the output function.
 
+In conclusion the model fell just short of reaching the 75% target. Further modification of the data and models may lead to a model that is overfit, which would lead to poor predictablity. It would be advisable to explore other machine learning options such as random forests as they can prove to be a better fit for certain classification use cases.
 
