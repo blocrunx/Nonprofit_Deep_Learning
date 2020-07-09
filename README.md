@@ -42,7 +42,7 @@ It was decided that the initial implementation of the model would use the reLu a
 
 - 3 neurons in the third layer.  
 
-- a single sigmoid neuron in the output function. 
+- 1 sigmoid neuron in the output function. 
 
   
 
